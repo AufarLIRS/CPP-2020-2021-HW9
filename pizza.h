@@ -14,9 +14,9 @@ class Pizza
   bool IsPepperoni;
 
 public:
-   Pizza(ViewOfDough dough, ViewOfPizza view, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
+  Pizza(ViewOfDough dough, ViewOfPizza view, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
         bool isPepperoni);
-   QString GetPizzaInformationText();
-   //friend std::ostream& operator<< (std::ostream &out, const Pizza &pizza);
+  QString GetPizzaInformationText();
+  // friend std::ostream& operator<< (std::ostream &out, const Pizza &pizza);
 };
 #endif  // PIZZA_H

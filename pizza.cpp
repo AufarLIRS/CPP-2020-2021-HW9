@@ -12,7 +12,6 @@ enum class ViewOfPizza
   FourCheez = 2,
   Sea = 3
 };
-
 Pizza::Pizza(ViewOfDough dough, ViewOfPizza view, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
              bool isPepperoni)
 {
@@ -42,7 +41,7 @@ QString Pizza::GetPizzaInformationText()
       break;
     }
     case ViewOfPizza::Sea: {
-      text += "\" Морская\" \n";
+      text += "\"Морская\" \n";
       break;
     }
   }
