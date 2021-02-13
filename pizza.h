@@ -2,20 +2,8 @@
 #include <QString>
 #ifndef PIZZA_H
 #define PIZZA_H
-
-enum class ViewOfDough
-{
-  Thin = 0,
-  Traditional = 1
-};
-enum class ViewOfPizza
-{
-  Pepperoni = 0,
-  Margarita = 1,
-  FourCheez = 2,
-  Sea = 3
-};
-
+enum class ViewOfDough;
+enum class ViewOfPizza;
 class Pizza
 {
   ViewOfDough Dough;

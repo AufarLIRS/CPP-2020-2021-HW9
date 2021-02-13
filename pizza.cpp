@@ -1,4 +1,18 @@
 #include "pizza.h"
+
+enum class ViewOfDough
+{
+  Thin = 0,
+  Traditional = 1
+};
+enum class ViewOfPizza
+{
+  Pepperoni = 0,
+  Margarita = 1,
+  FourCheez = 2,
+  Sea = 3
+};
+
 Pizza::Pizza(ViewOfDough dough, ViewOfPizza view, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
              bool isPepperoni)
 {
