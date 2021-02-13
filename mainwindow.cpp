@@ -69,7 +69,7 @@ public:
   QString buildMessage()
   {
     QString resultMessage;
-    resultMessage = "Ваша пицца:\n";
+    resultMessage = "Ваша пиццца:\n";
 
     switch (dough)
     {
