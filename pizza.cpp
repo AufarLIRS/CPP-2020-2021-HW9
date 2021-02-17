@@ -1,6 +1,8 @@
 #include "pizza.h"
 
-Pizza::Pizza(Pizza_Characteristics::Dough dough, Pizza_Characteristics::Type type, Pizza_Characteristics::Bool olives, Pizza_Characteristics::Bool pepperoni, Pizza_Characteristics::Bool double_cheese, Pizza_Characteristics::Bool pineapples)
+Pizza::Pizza(Pizza_Characteristics::Dough dough, Pizza_Characteristics::Type type, Pizza_Characteristics::Bool olives,
+             Pizza_Characteristics::Bool pepperoni, Pizza_Characteristics::Bool double_cheese,
+             Pizza_Characteristics::Bool pineapples)
 {
   this->dough_ = dough;
   this->type_ = type;
