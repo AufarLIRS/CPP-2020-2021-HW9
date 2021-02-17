@@ -3,54 +3,59 @@
 
 #include <iostream>
 
-enum Dough
+namespace Pizza_Characteristics
 {
-  DOUGH_THIN,
-  DOUGH_TRADITIONAL
-};
-enum Type
-{
-  TYPE_PEPPERONI,
-  TYPE_MARGARET,
-  TYPE_FOUR_CHEESES,
-  TYPE_MARINE
-};
-enum Bool
-{
-  NO,
-  YES
-};
+
+  enum class Dough
+  {
+    DOUGH_THIN,
+    DOUGH_TRADITIONAL
+  };
+  enum class Type
+  {
+    TYPE_PEPPERONI,
+    TYPE_MARGARET,
+    TYPE_FOUR_CHEESES,
+    TYPE_MARINE
+  };
+  enum class Bool
+  {
+    NO,
+    YES
+  };
+
+}
 
 class Pizza
 {
-  Dough dough_;
-  Type type_;
-  Bool olives_;
-  Bool pepperoni_;
-  Bool double_cheese_;
-  Bool pineapples_;
+  Pizza_Characteristics::Dough dough_;
+  Pizza_Characteristics::Type type_;
+  Pizza_Characteristics::Bool olives_;
+  Pizza_Characteristics::Bool pepperoni_;
+  Pizza_Characteristics::Bool double_cheese_;
+  Pizza_Characteristics::Bool pineapples_;
 
 public:
-  Pizza(Dough dough, Type type, Bool olives, Bool pepperoni, Bool double_cheese, Bool pineapples);
+  Pizza(Pizza_Characteristics::Dough dough, Pizza_Characteristics::Type type, Pizza_Characteristics::Bool olives, Pizza_Characteristics::Bool pepperoni, Pizza_Characteristics::Bool double_cheese, Pizza_Characteristics::Bool pineapples);
   std::string to_string();
 };
 
 class PizzaBuilder
 {
-  Dough dough_;
-  Type type_;
-  Bool olives_;
-  Bool pepperoni_;
-  Bool double_cheese_;
-  Bool pineapples_;
+  Pizza_Characteristics::Dough dough_;
+  Pizza_Characteristics::Type type_;
+  Pizza_Characteristics::Bool olives_;
+  Pizza_Characteristics::Bool pepperoni_;
+  Pizza_Characteristics::Bool double_cheese_;
+  Pizza_Characteristics::Bool pineapples_;
 
 public:
-  void setDough(Dough dough);
-  void setType(Type type);
-  void setOlives(Bool olives);
-  void setPepperoni(Bool pepperoni);
-  void setDoubleCheese(Bool double_cheese);
-  void setPineapples(Bool pineapples);
+  void setDough(Pizza_Characteristics::Dough dough);
+  void setType(Pizza_Characteristics::Type type);
+  void setOlives(Pizza_Characteristics::Bool olives);
+  void setPepperoni(Pizza_Characteristics::Bool pepperoni);
+  void setDoubleCheese(Pizza_Characteristics::Bool double_cheese);
+  void setPineapples(Pizza_Characteristics::Bool pineapples);
   Pizza build();
 };
 

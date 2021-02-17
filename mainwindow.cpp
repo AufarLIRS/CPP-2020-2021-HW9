@@ -26,64 +26,64 @@ void MainWindow::on_make_pizza_clicked()
 
     if (ui->thin->isChecked())
     {
-      pizza_builder.setDough(DOUGH_THIN);
+      pizza_builder.setDough(Pizza_Characteristics::Dough::DOUGH_THIN);
     }
     else
     {
-      pizza_builder.setDough(DOUGH_TRADITIONAL);
+      pizza_builder.setDough(Pizza_Characteristics::Dough::DOUGH_TRADITIONAL);
     }
 
     if (ui->pepperoni->isChecked())
     {
-      pizza_builder.setType(TYPE_PEPPERONI);
+      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_PEPPERONI);
     }
     else if (ui->margaret->isChecked())
     {
-      pizza_builder.setType(TYPE_MARGARET);
+      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_MARGARET);
     }
     else if (ui->four_cheeses->isChecked())
     {
-      pizza_builder.setType(TYPE_FOUR_CHEESES);
+      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_FOUR_CHEESES);
     }
     else
     {
-      pizza_builder.setType(TYPE_MARINE);
+      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_MARINE);
     }
 
     if (ui->olives_no->isChecked())
     {
-      pizza_builder.setOlives(NO);
+      pizza_builder.setOlives(Pizza_Characteristics::Bool::NO);
     }
     else
     {
-      pizza_builder.setOlives(YES);
+      pizza_builder.setOlives(Pizza_Characteristics::Bool::YES);
     }
 
     if (ui->pepperoni_no->isChecked())
     {
-      pizza_builder.setPepperoni(NO);
+      pizza_builder.setPepperoni(Pizza_Characteristics::Bool::NO);
     }
     else
     {
-      pizza_builder.setPepperoni(YES);
+      pizza_builder.setPepperoni(Pizza_Characteristics::Bool::YES);
     }
 
     if (ui->double_no->isChecked())
     {
-      pizza_builder.setDoubleCheese(NO);
+      pizza_builder.setDoubleCheese(Pizza_Characteristics::Bool::NO);
     }
     else
     {
-      pizza_builder.setDoubleCheese(YES);
+      pizza_builder.setDoubleCheese(Pizza_Characteristics::Bool::YES);
     }
 
     if (ui->pineapples_no->isChecked())
     {
-      pizza_builder.setPineapples(NO);
+      pizza_builder.setPineapples(Pizza_Characteristics::Bool::NO);
     }
     else
     {
-      pizza_builder.setPineapples(YES);
+      pizza_builder.setPineapples(Pizza_Characteristics::Bool::YES);
     }
 
     Pizza pizza = pizza_builder.build();
