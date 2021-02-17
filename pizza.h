@@ -7,15 +7,15 @@ namespace Pizza_Characteristics
 {
 enum class Dough
 {
-  DOUGH_THIN,
-  DOUGH_TRADITIONAL
+  THIN,
+  TRADITIONAL
 };
 enum class Type
 {
-  TYPE_PEPPERONI,
-  TYPE_MARGARET,
-  TYPE_FOUR_CHEESES,
-  TYPE_MARINE
+  PEPPERONI,
+  MARGARET,
+  FOUR_CHEESES,
+  MARINE
 };
 enum class Bool
 {

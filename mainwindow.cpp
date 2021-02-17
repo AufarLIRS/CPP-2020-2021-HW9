@@ -24,28 +24,28 @@ void MainWindow::on_make_pizza_clicked()
 
     if (ui->thin->isChecked())
     {
-      pizza_builder.setDough(Pizza_Characteristics::Dough::DOUGH_THIN);
+      pizza_builder.setDough(Pizza_Characteristics::Dough::THIN);
     }
     else
     {
-      pizza_builder.setDough(Pizza_Characteristics::Dough::DOUGH_TRADITIONAL);
+      pizza_builder.setDough(Pizza_Characteristics::Dough::TRADITIONAL);
     }
 
     if (ui->pepperoni->isChecked())
     {
-      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_PEPPERONI);
+      pizza_builder.setType(Pizza_Characteristics::Type::PEPPERONI);
     }
     else if (ui->margaret->isChecked())
     {
-      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_MARGARET);
+      pizza_builder.setType(Pizza_Characteristics::Type::MARGARET);
     }
     else if (ui->four_cheeses->isChecked())
     {
-      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_FOUR_CHEESES);
+      pizza_builder.setType(Pizza_Characteristics::Type::FOUR_CHEESES);
     }
     else
     {
-      pizza_builder.setType(Pizza_Characteristics::Type::TYPE_MARINE);
+      pizza_builder.setType(Pizza_Characteristics::Type::MARINE);
     }
 
     if (ui->olives_no->isChecked())

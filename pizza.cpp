@@ -14,20 +14,20 @@ Pizza::Pizza(Pizza_Characteristics::Dough dough, Pizza_Characteristics::Type typ
 std::string Pizza::to_string()
 {
   std::string dough = "тонкое тесто";
-  if (this->dough_ != Pizza_Characteristics::Dough::DOUGH_THIN)
+  if (this->dough_ != Pizza_Characteristics::Dough::THIN)
   {
     dough = "традиционное тесто";
   }
   std::string type = "пепперони";
-  if (this->type_ == Pizza_Characteristics::Type::TYPE_MARGARET)
+  if (this->type_ == Pizza_Characteristics::Type::MARGARET)
   {
     type = "маргарита";
   }
-  else if (this->type_ == Pizza_Characteristics::Type::TYPE_FOUR_CHEESES)
+  else if (this->type_ == Pizza_Characteristics::Type::FOUR_CHEESES)
   {
     type = "четыре сыра";
   }
-  else if (this->type_ == Pizza_Characteristics::Type::TYPE_MARINE)
+  else if (this->type_ == Pizza_Characteristics::Type::MARINE)
   {
     type = "морская";
   }
