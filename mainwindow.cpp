@@ -17,10 +17,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_make_pizza_clicked()
 {
   std::string text = "Пожалуйста выберите все компоненты";
-  if ((ui->olives_no->isChecked() || ui->olives_yes->isChecked()) &&
-      (ui->pepperoni_no->isChecked() || ui->pepperoni_yes->isChecked()) &&
-      (ui->double_no->isChecked() || ui->double_yes->isChecked()) &&
-      (ui->pineapples_no->isChecked() || ui->pineapples_yes->isChecked()))
+  if (ui->olives_group->checkedId() != -1 && ui->pepperoni_group->checkedId() != -1 &&
+      ui->double_cheese_group->checkedId() != -1 && ui->pineapples_group->checkedId() != -1)
   {
     PizzaBuilder pizza_builder;
 

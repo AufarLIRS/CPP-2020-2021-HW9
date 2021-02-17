@@ -44,6 +44,9 @@
         <property name="checked">
          <bool>true</bool>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">dough_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -51,6 +54,9 @@
         <property name="text">
          <string>Традиционное тесто</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">dough_group</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -86,6 +92,9 @@
         <property name="checked">
          <bool>true</bool>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">type_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -93,6 +102,9 @@
         <property name="text">
          <string>Маргарита</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">type_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -100,6 +112,9 @@
         <property name="text">
          <string>Четыре сыра</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">type_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -107,6 +122,9 @@
         <property name="text">
          <string>Морская</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">type_group</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -139,6 +157,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">olives_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -146,6 +167,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">olives_group</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -178,6 +202,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">pepperoni_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -185,6 +212,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">pepperoni_group</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -217,6 +247,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">double_cheese_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -224,6 +257,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">double_cheese_group</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -269,6 +305,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">pineapples_group</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -276,6 +315,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">pineapples_group</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -306,4 +348,12 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="dough_group"/>
+  <buttongroup name="type_group"/>
+  <buttongroup name="olives_group"/>
+  <buttongroup name="pepperoni_group"/>
+  <buttongroup name="double_cheese_group"/>
+  <buttongroup name="pineapples_group"/>
+ </buttongroups>
 </ui>
