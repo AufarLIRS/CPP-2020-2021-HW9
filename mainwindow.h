@@ -2,12 +2,55 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QButtonGroup>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
 class MainWindow;
 }
+
+namespace PizzaEnumsBox
+{
+enum Dough
+{
+  thin_dough,
+  tradition_dough
+};
+
+enum TypeOfPizza
+{
+  pepperoni_pizza,
+  margarita_pizza,
+  fourCheese_pizza,
+  sea_pizza
+};
+
+enum Olives
+{
+  yes_olives,
+  no_olives
+};
+
+enum Pepperoni
+{
+  yes_pepperoni,
+  no_pepperoni
+};
+
+enum DoubleCheese
+{
+  yes_doubleCheese,
+  no_doubleCheese
+};
+
+enum Ananases
+{
+  yes_ananases,
+  no_ananases
+};
+}  // namespace PizzaEnumsBox
+
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -19,37 +62,15 @@ public:
   ~MainWindow();
 
 private slots:
-  void on_thin_dough_clicked();
-
-  void on_tradition_dough_clicked();
-
-  void on_pepperoni_pizza_clicked();
-
-  void on_margarita_pizza_clicked();
-
-  void on_fourCheese_pizza_clicked();
-
-  void on_sea_pizza_clicked();
-
-  void on_yes_olives_clicked();
-
-  void on_no_olives_clicked();
-
-  void on_yes_pepperoni_clicked();
-
-  void on_no_pepperoni_clicked();
-
-  void on_yes_ananases_clicked();
-
-  void on_no_ananases_clicked();
-
   void on_makePizzaButton_clicked();
-
-  void on_yes_doubleCheese_clicked();
-
-  void on_no_doubleCheese_clicked();
 
 private:
   Ui::MainWindow* ui;
+  QButtonGroup dough_radio_btn_group;
+  QButtonGroup pizza_type_radio_btn_group;
+  QButtonGroup olives_radio_btn_group;
+  QButtonGroup pepperoni_radio_btn_group;
+  QButtonGroup double_cheese_radio_btn_group;
+  QButtonGroup ananases_radio_btn_group;
 };
 #endif  // MAINWINDOW_H

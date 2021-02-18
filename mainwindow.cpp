@@ -2,60 +2,19 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 
-enum Dough
-{
-  thin_dough,
-  tradition_dough
-};
-
-enum TypeOfPizza
-{
-  pepperoni_pizza,
-  margarita_pizza,
-  fourCheese_pizza,
-  sea_pizza
-};
-
-enum Olives
-{
-  yes_olives,
-  no_olives,
-  not_defined_olives
-};
-
-enum Pepperoni
-{
-  yes_pepperoni,
-  no_pepperoni,
-  not_defined_pepperoni
-};
-
-enum DoubleCheese
-{
-  yes_doubleCheese,
-  no_doubleCheese,
-  not_defined_doubleCheese
-};
-
-enum Ananases
-{
-  yes_ananases,
-  no_ananases,
-  not_defined_ananases
-};
-
 class Pizza
 {
-  Dough dough;
-  TypeOfPizza typeOfPizza;
-  Olives olives;
-  Pepperoni pepperoni;
-  DoubleCheese doubleCheese;
-  Ananases ananases;
+  PizzaEnumsBox::Dough dough;
+  PizzaEnumsBox::TypeOfPizza typeOfPizza;
+  PizzaEnumsBox::Olives olives;
+  PizzaEnumsBox::Pepperoni pepperoni;
+  PizzaEnumsBox::DoubleCheese doubleCheese;
+  PizzaEnumsBox::Ananases ananases;
 
 public:
-  explicit Pizza(Dough dough, TypeOfPizza typeOfPizza, Olives olives, Pepperoni pepperoni, DoubleCheese doubleCheese,
-                 Ananases ananases)
+  explicit Pizza(PizzaEnumsBox::Dough dough, PizzaEnumsBox::TypeOfPizza typeOfPizza, PizzaEnumsBox::Olives olives,
+                 PizzaEnumsBox::Pepperoni pepperoni, PizzaEnumsBox::DoubleCheese doubleCheese,
+                 PizzaEnumsBox::Ananases ananases)
   {
     this->dough = dough;
     this->typeOfPizza = typeOfPizza;
@@ -64,91 +23,98 @@ public:
     this->doubleCheese = doubleCheese;
     this->ananases = ananases;
   };
-  Pizza(){};
 
   QString buildMessage()
   {
     QString resultMessage;
-    resultMessage = "Ваша пиццца:\n";
+    resultMessage = "Ваша пицца:\n";
 
     switch (dough)
     {
-      case thin_dough: {
+      case PizzaEnumsBox::thin_dough: {
         resultMessage += "С тонким тестом\n";
+        break;
       }
-      break;
-      case tradition_dough: {
+
+      case PizzaEnumsBox::tradition_dough: {
         resultMessage += "С традиционным тестом\n";
+        break;
       }
-      break;
     }
 
     switch (typeOfPizza)
     {
-      case pepperoni_pizza: {
+      case PizzaEnumsBox::pepperoni_pizza: {
         resultMessage += "Пицца \"Пепперони\"\n";
+        break;
       }
-      break;
-      case margarita_pizza: {
+
+      case PizzaEnumsBox::margarita_pizza: {
         resultMessage += "Пицца \"Маргарита\"\n";
+        break;
       }
-      break;
-      case fourCheese_pizza: {
+
+      case PizzaEnumsBox::fourCheese_pizza: {
         resultMessage += "Пицца \"Четыре сыра\"\n";
+        break;
       }
-      break;
-      case sea_pizza: {
+
+      case PizzaEnumsBox::sea_pizza: {
         resultMessage += "Пицца \"Морская\"\n";
+        break;
       }
-      break;
     }
 
     switch (olives)
     {
-      case yes_olives: {
+      case PizzaEnumsBox::yes_olives: {
         resultMessage += "С оливками\n";
+        break;
       }
-      break;
-      case no_olives: {
+
+      case PizzaEnumsBox::no_olives: {
         resultMessage += "Без оливок\n";
+        break;
       }
-      break;
     }
 
     switch (pepperoni)
     {
-      case yes_pepperoni: {
+      case PizzaEnumsBox::yes_pepperoni: {
         resultMessage += "С пепперони\n";
+        break;
       }
-      break;
-      case no_pepperoni: {
+
+      case PizzaEnumsBox::no_pepperoni: {
         resultMessage += "Без пепперони\n";
+        break;
       }
-      break;
     }
 
     switch (doubleCheese)
     {
-      case yes_doubleCheese: {
+      case PizzaEnumsBox::yes_doubleCheese: {
         resultMessage += "С двойным сыром\n";
+        break;
       }
-      break;
-      case no_doubleCheese: {
+
+      case PizzaEnumsBox::no_doubleCheese: {
         resultMessage += "Без двойного сыра\n";
+        break;
       }
-      break;
     }
 
     switch (ananases)
     {
-      case yes_ananases: {
+      case PizzaEnumsBox::yes_ananases: {
         resultMessage += "С ананасами";
+        break;
       }
-      break;
-      case no_ananases: {
+
+      case PizzaEnumsBox::no_ananases: {
         resultMessage += "Без ананасов";
+        break;
       }
-      break;
     }
 
     return resultMessage;
@@ -157,36 +123,35 @@ public:
 
 class PizzaBuilder
 {
-  Dough dough = thin_dough;
-  TypeOfPizza typeOfPizza = pepperoni_pizza;
-  Olives olives = not_defined_olives;
-  Pepperoni pepperoni = not_defined_pepperoni;
-  DoubleCheese doubleCheese = not_defined_doubleCheese;
-  Ananases ananases = not_defined_ananases;
+  PizzaEnumsBox::Dough dough = PizzaEnumsBox::thin_dough;
+  PizzaEnumsBox::TypeOfPizza typeOfPizza = PizzaEnumsBox::pepperoni_pizza;
+  PizzaEnumsBox::Olives olives;
+  PizzaEnumsBox::Pepperoni pepperoni;
+  PizzaEnumsBox::DoubleCheese doubleCheese;
+  PizzaEnumsBox::Ananases ananases;
 
 public:
-  PizzaBuilder(){};
-  void setDough(Dough dough)
+  void setDough(PizzaEnumsBox::Dough dough)
   {
     this->dough = dough;
   };
-  void setTypeOfPizza(TypeOfPizza typeOfPizza)
+  void setTypeOfPizza(PizzaEnumsBox::TypeOfPizza typeOfPizza)
   {
     this->typeOfPizza = typeOfPizza;
   };
-  void setOlives(Olives olives)
+  void setOlives(PizzaEnumsBox::Olives olives)
   {
     this->olives = olives;
   };
-  void setPepperoni(Pepperoni pepperoni)
+  void setPepperoni(PizzaEnumsBox::Pepperoni pepperoni)
   {
     this->pepperoni = pepperoni;
   };
-  void setDoubleCheese(DoubleCheese doubleCheese)
+  void setDoubleCheese(PizzaEnumsBox::DoubleCheese doubleCheese)
   {
     this->doubleCheese = doubleCheese;
   };
-  void setAnanases(Ananases ananases)
+  void setAnanases(PizzaEnumsBox::Ananases ananases)
   {
     this->ananases = ananases;
   };
@@ -197,11 +162,30 @@ public:
 };
 
 PizzaBuilder pizzaBuilder;
-Pizza pizzaResult;
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
+
+  dough_radio_btn_group.addButton(ui->thin_dough, PizzaEnumsBox::Dough::thin_dough);
+  dough_radio_btn_group.addButton(ui->tradition_dough, PizzaEnumsBox::tradition_dough);
+
+  pizza_type_radio_btn_group.addButton(ui->pepperoni_pizza, PizzaEnumsBox::pepperoni_pizza);
+  pizza_type_radio_btn_group.addButton(ui->margarita_pizza, PizzaEnumsBox::margarita_pizza);
+  pizza_type_radio_btn_group.addButton(ui->fourCheese_pizza, PizzaEnumsBox::fourCheese_pizza);
+  pizza_type_radio_btn_group.addButton(ui->sea_pizza, PizzaEnumsBox::sea_pizza);
+
+  olives_radio_btn_group.addButton(ui->yes_olives, PizzaEnumsBox::yes_olives);
+  olives_radio_btn_group.addButton(ui->no_olives, PizzaEnumsBox::no_olives);
+
+  pepperoni_radio_btn_group.addButton(ui->yes_pepperoni, PizzaEnumsBox::yes_pepperoni);
+  pepperoni_radio_btn_group.addButton(ui->no_pepperoni, PizzaEnumsBox::no_pepperoni);
+
+  double_cheese_radio_btn_group.addButton(ui->yes_doubleCheese, PizzaEnumsBox::yes_doubleCheese);
+  double_cheese_radio_btn_group.addButton(ui->no_doubleCheese, PizzaEnumsBox::no_doubleCheese);
+
+  ananases_radio_btn_group.addButton(ui->yes_ananases, PizzaEnumsBox::yes_ananases);
+  ananases_radio_btn_group.addButton(ui->no_ananases, PizzaEnumsBox::no_ananases);
 }
 
 MainWindow::~MainWindow()
@@ -209,78 +193,19 @@ MainWindow::~MainWindow()
   delete ui;
 }
 
-void MainWindow::on_thin_dough_clicked()
-{
-  pizzaBuilder.setDough(thin_dough);
-}
-
-void MainWindow::on_tradition_dough_clicked()
-{
-  pizzaBuilder.setDough(tradition_dough);
-}
-
-void MainWindow::on_pepperoni_pizza_clicked()
-{
-  pizzaBuilder.setTypeOfPizza(pepperoni_pizza);
-}
-
-void MainWindow::on_margarita_pizza_clicked()
-{
-  pizzaBuilder.setTypeOfPizza(margarita_pizza);
-}
-
-void MainWindow::on_fourCheese_pizza_clicked()
-{
-  pizzaBuilder.setTypeOfPizza(fourCheese_pizza);
-}
-
-void MainWindow::on_sea_pizza_clicked()
-{
-  pizzaBuilder.setTypeOfPizza(sea_pizza);
-}
-
-void MainWindow::on_yes_olives_clicked()
-{
-  pizzaBuilder.setOlives(yes_olives);
-}
-
-void MainWindow::on_no_olives_clicked()
-{
-  pizzaBuilder.setOlives(no_olives);
-}
-
-void MainWindow::on_yes_pepperoni_clicked()
-{
-  pizzaBuilder.setPepperoni(yes_pepperoni);
-}
-
-void MainWindow::on_no_pepperoni_clicked()
-{
-  pizzaBuilder.setPepperoni(no_pepperoni);
-}
-
-void MainWindow::on_yes_doubleCheese_clicked()
-{
-  pizzaBuilder.setDoubleCheese(yes_doubleCheese);
-}
-
-void MainWindow::on_no_doubleCheese_clicked()
-{
-  pizzaBuilder.setDoubleCheese(no_doubleCheese);
-}
-
-void MainWindow::on_yes_ananases_clicked()
-{
-  pizzaBuilder.setAnanases(yes_ananases);
-}
-
-void MainWindow::on_no_ananases_clicked()
-{
-  pizzaBuilder.setAnanases(no_ananases);
-}
-
 void MainWindow::on_makePizzaButton_clicked()
 {
-  pizzaResult = pizzaBuilder.build();
-  ui->resultText->setText(pizzaResult.buildMessage());
+  pizzaBuilder.setDough(PizzaEnumsBox::Dough(dough_radio_btn_group.checkedId()));
+
+  pizzaBuilder.setTypeOfPizza(PizzaEnumsBox::TypeOfPizza(pizza_type_radio_btn_group.checkedId()));
+
+  pizzaBuilder.setOlives(PizzaEnumsBox::Olives(olives_radio_btn_group.checkedId()));
+
+  pizzaBuilder.setPepperoni(PizzaEnumsBox::Pepperoni(pepperoni_radio_btn_group.checkedId()));
+
+  pizzaBuilder.setDoubleCheese(PizzaEnumsBox::DoubleCheese(double_cheese_radio_btn_group.checkedId()));
+
+  pizzaBuilder.setAnanases(PizzaEnumsBox::Ananases(ananases_radio_btn_group.checkedId()));
+
+  ui->resultText->setText(pizzaBuilder.build().buildMessage());
 }
