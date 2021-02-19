@@ -1,25 +1,32 @@
 #include "pizzabuilder.h"
+
 PizzaBuilder::PizzaBuilder(){};  //присвоил начальные значения в классе
+
 void PizzaBuilder::setDough(Dough dough)
 {
   this->dough = dough;
 };
+
 void PizzaBuilder::setType(Type type)
 {
   this->type = type;
 };
+
 void PizzaBuilder::addOlives(Add olives)
 {
   this->olives = olives;
 };
+
 void PizzaBuilder::addPepperoni(Add pepperoni)
 {
   this->pepperoni = pepperoni;
 };
+
 void PizzaBuilder::addDoubleCheese(Add double_cheese)
 {
   this->double_cheese = double_cheese;
 };
+
 void PizzaBuilder::addPineapple(Add pineapple)
 {
   this->pineapple = pineapple;
@@ -53,6 +60,7 @@ QString PizzaBuilder::Pizza_composition()
       break;
     }
   }
+
   switch (this->dough)
   {
     case (Dough::THIN): {
@@ -88,6 +96,7 @@ QString PizzaBuilder::Pizza_composition()
       break;
     }
   }
+
   switch (this->pineapple)
   {
     case (Add::YES): {
@@ -99,6 +108,7 @@ QString PizzaBuilder::Pizza_composition()
       break;
     }
   }
+
   switch (this->double_cheese)
   {
     case (Add::YES): {
