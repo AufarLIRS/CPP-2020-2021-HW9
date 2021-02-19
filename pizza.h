@@ -2,12 +2,30 @@
 #define PIZZA_H
 #include <QApplication>
 #include <iostream>
-#include "Enums.cpp"
+
+enum class Dough  //не ставил в отдельный namespace, тк как не дает изящно использовать в радиобаттонах
+{
+  THIN,
+  TRADITIONAL
+};
+
+enum class Type
+{
+  PEPPERONI,
+  MARGARITA,
+  FOURCHEESES,
+  SEA,
+};
+enum class Add
+{
+  YES,
+  NO
+};
 
 class Pizza
 {
-  Pizza_dough dough;
-  Pizza_type type;
+  Dough dough;
+  Type type;
   Add olives;
   Add pepperoni;
   Add double_cheese;
@@ -15,7 +33,7 @@ class Pizza
 
 public:
   Pizza();
-  explicit Pizza(Pizza_dough dough, Pizza_type type, Add olives, Add pepperoni, Add double_cheese, Add pineapple);
+  explicit Pizza(Dough dough, Type type, Add olives, Add pepperoni, Add double_cheese, Add pineapple);
 };
 
 #endif  // PIZZA_H

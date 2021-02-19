@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>413</width>
-    <height>705</height>
+    <width>421</width>
+    <height>784</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,11 @@
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <widget class="QRadioButton" name="radioButton">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Тонкое тесто</string>
          </property>
@@ -33,6 +38,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_2">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Традиционное тесто</string>
          </property>
@@ -49,6 +59,11 @@
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QRadioButton" name="radioButton_3">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Пепперони</string>
          </property>
@@ -59,6 +74,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_4">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Маргарита</string>
          </property>
@@ -66,6 +86,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_5">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Четыре сыра</string>
          </property>
@@ -73,6 +98,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_6">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Морская</string>
          </property>
@@ -89,6 +119,11 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QRadioButton" name="radioButton_7">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Да</string>
          </property>
@@ -96,6 +131,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_8">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Нет</string>
          </property>
@@ -115,6 +155,11 @@
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QRadioButton" name="radioButton_9">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Да</string>
          </property>
@@ -122,6 +167,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_10">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Нет</string>
          </property>
@@ -141,6 +191,11 @@
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QRadioButton" name="radioButton_11">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Да</string>
          </property>
@@ -148,6 +203,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_12">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Нет</string>
          </property>
@@ -167,6 +227,11 @@
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
         <widget class="QRadioButton" name="radioButton_13">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Да</string>
          </property>
@@ -174,6 +239,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_14">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Нет</string>
          </property>
@@ -187,6 +257,13 @@
     </item>
     <item>
      <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Make Pizza!</string>
       </property>
@@ -194,6 +271,13 @@
     </item>
     <item>
      <widget class="QTextEdit" name="textEdit">
+      <property name="font">
+       <font>
+        <family>Century Gothic</family>
+        <pointsize>10</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
       <property name="readOnly">
        <bool>true</bool>
       </property>
@@ -206,7 +290,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>413</width>
+     <width>421</width>
      <height>26</height>
     </rect>
    </property>

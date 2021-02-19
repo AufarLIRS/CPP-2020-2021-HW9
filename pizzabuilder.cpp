@@ -1,14 +1,10 @@
 #include "pizzabuilder.h"
-
-PizzaBuilder::PizzaBuilder()
-{
-}
-
-void PizzaBuilder::setDough(Pizza_dough dough)
+PizzaBuilder::PizzaBuilder(){};  //присвоил начальные значения в классе
+void PizzaBuilder::setDough(Dough dough)
 {
   this->dough = dough;
 };
-void PizzaBuilder::setType(Pizza_type type)
+void PizzaBuilder::setType(Type type)
 {
   this->type = type;
 };
@@ -34,67 +30,86 @@ Pizza PizzaBuilder::build()
   return Pizza(dough, type, olives, pepperoni, double_cheese, pineapple);
 }
 
-std::string PizzaBuilder::Pizza_composition()
+QString PizzaBuilder::Pizza_composition()
 {
-  std::string type = "Пепперони";
-  if (this->type == Pizza_type::Margarita)
+  QString composition = "Пицца";
+
+  switch (this->type)
   {
-    type = "Маргарита";
-  };
-  if (this->type == Pizza_type::Sea)
-  {
-    type = "Морская";
-  };
-  if (this->type == Pizza_type::FourCheeses)
-  {
-    type = "Четыре сыра";
-  };
-  std::string dough = "Тонкое тесто";
-  if (this->dough == Pizza_dough::traditional)
-  {
-    dough = "Традиционное тесто";
-  };
-  std::string olives = "";
-  if (this->olives == Add::Yes)
-  {
-    olives = "оливки";
+    case (Type::PEPPERONI): {
+      composition += " Пепперони \n";
+      break;
+    }
+    case (Type::MARGARITA): {
+      composition += " Маргарита  \n";
+      break;
+    }
+    case (Type::SEA): {
+      composition += " Морская  \n";
+      break;
+    }
+    case (Type::FOURCHEESES): {
+      composition += " Четыре сыра  \n";
+      break;
+    }
   }
-  std::string pepperoni = "";
-  if (this->pepperoni == Add::Yes)
+  switch (this->dough)
   {
-    pepperoni = "пепперони";
+    case (Dough::THIN): {
+      composition += "Тонкое тесто \n";
+      break;
+    }
+    case (Dough::TRADITIONAL): {
+      composition += " Традиционное тесто \n";
+      break;
+    }
   }
-  std::string dbCheese = "";
-  if (this->double_cheese == Add::Yes)
+
+  switch (this->olives)
   {
-    dbCheese = "двойной сыр";
+    case (Add::YES): {
+      composition += "+Оливки \n";
+      break;
+    }
+    case (Add::NO): {
+      composition += "";
+      break;
+    }
   }
-  std::string pineapple = "";
-  if (this->pineapple == Add::Yes)
+
+  switch (this->pepperoni)
   {
-    pineapple = "ананас";
+    case (Add::YES): {
+      composition += "+Пепперони  \n";
+      break;
+    }
+    case (Add::NO): {
+      composition += "";
+      break;
+    }
   }
-  std::string composition = "Пицца " + type + '\n' + dough + '\n';
-  if (olives != "" || pepperoni != "" || dbCheese != "" || pineapple != "")
+  switch (this->pineapple)
   {
-    composition += "+" + olives;
+    case (Add::YES): {
+      composition += "+Ананас \n";
+      break;
+    }
+    case (Add::NO): {
+      composition += "";
+      break;
+    }
   }
-  else
-    return composition;
-  if (olives != "" && (pepperoni != "" || dbCheese != "" || pineapple != ""))
+  switch (this->double_cheese)
   {
-    composition += ", ";
+    case (Add::YES): {
+      composition += "+Двойной сыр  \n";
+      break;
+    }
+    case (Add::NO): {
+      composition += "";
+      break;
+    }
   }
-  composition += pepperoni;
-  if (pepperoni != "" && (dbCheese != "" || pineapple != ""))
-  {
-    composition += ", ";
-  }
-  composition += dbCheese;
-  if (dbCheese != "" && (pineapple != ""))
-  {
-    composition += ", ";
-  }
-  composition += pineapple;
+
   return composition;
 }

@@ -1,18 +1,21 @@
-enum Pizza_dough
+namespace Pizza_Characteristics
 {
-  thin,
-  traditional
+enum class Dough
+{
+  Thin,
+  Traditional
 };
 
-enum Pizza_type
+enum class Type
 {
-  Pepperoni,
-  Margarita,
-  FourCheeses,
-  Sea,
+  Pepperoni ,
+  Margarita ,
+  FourCheeses = 2,
+  Sea = 3,
 };
-enum Add
+enum class Add
 {
-  Yes,
-  No
+  Yes = 0,
+  No = 1
 };
+}  // namespace Pizza_Characteristics
