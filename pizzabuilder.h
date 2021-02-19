@@ -1,11 +1,12 @@
 #include "pizza.h"
+//#include "characteristicsofpizza.h"
 #ifndef PIZZABUILDER_H
 #define PIZZABUILDER_H
 
 class PizzaBuilder
 {
   ViewOfDough Dough;
-  ViewOfPizza View;
+  TypeOfPizza Type;
   bool IsWithOlives;
   bool IsWithPinapple;
   bool IsDoubleCheez;
@@ -14,7 +15,7 @@ class PizzaBuilder
 public:
   PizzaBuilder();
   PizzaBuilder* setDough(ViewOfDough view);
-  PizzaBuilder* setView(ViewOfPizza view);
+  PizzaBuilder* setView(TypeOfPizza view);
   PizzaBuilder* setIsWithOlives(bool isNeed);
   PizzaBuilder* setIsWithPinapple(bool isNeed);
   PizzaBuilder* setIsDoubleCheez(bool isNeed);

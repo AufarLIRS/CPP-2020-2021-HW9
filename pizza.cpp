@@ -1,22 +1,10 @@
 #include "pizza.h"
-
-enum class ViewOfDough
-{
-  Thin = 0,
-  Traditional = 1
-};
-enum class ViewOfPizza
-{
-  Pepperoni = 0,
-  Margarita = 1,
-  FourCheez = 2,
-  Sea = 3
-};
-Pizza::Pizza(ViewOfDough dough, ViewOfPizza view, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
+//#include "characteristicsofpizza.h"
+Pizza::Pizza(ViewOfDough dough, TypeOfPizza typeOfPizza, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
              bool isPepperoni)
 {
   this->Dough = dough;
-  this->View = view;
+  this->Type = typeOfPizza;
   this->IsWithOlives = isWithOlive;
   this->IsWithPinapple = isWithPinapple;
   this->IsDoubleCheez = isDoubleCheez;
@@ -26,21 +14,21 @@ Pizza::Pizza(ViewOfDough dough, ViewOfPizza view, bool isWithOlive, bool isWithP
 QString Pizza::GetPizzaInformationText()
 {
   QString text;
-  switch (this->View)
+  switch (this->Type)
   {
-    case ViewOfPizza::Pepperoni: {
+    case TypeOfPizza::Pepperoni: {
       text += "\"Пепперони\" \n";
       break;
     }
-    case ViewOfPizza::FourCheez: {
+    case TypeOfPizza::FourCheez: {
       text += "\"Четыре сыра\" \n ";
       break;
     }
-    case ViewOfPizza::Margarita: {
+    case TypeOfPizza::Margarita: {
       text += "\"Маргарита\" \n";
       break;
     }
-    case ViewOfPizza::Sea: {
+    case TypeOfPizza::Sea: {
       text += "\"Морская\" \n";
       break;
     }

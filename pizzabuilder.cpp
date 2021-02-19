@@ -1,13 +1,22 @@
 #include "pizzabuilder.h"
 
+PizzaBuilder::PizzaBuilder()
+{
+  this->Dough = ViewOfDough::Thin;
+  this->Type = TypeOfPizza::Pepperoni;
+  this->IsWithOlives = false;
+  this->IsWithPinapple = false;
+  this->IsDoubleCheez = false;
+  this->IsPepperoni = false;
+};
 PizzaBuilder* PizzaBuilder::setDough(ViewOfDough view)
 {
   this->Dough = view;
   return this;
 };
-PizzaBuilder* PizzaBuilder::setView(ViewOfPizza view)
+PizzaBuilder* PizzaBuilder::setView(TypeOfPizza view)
 {
-  this->View = view;
+  this->Type = view;
   return this;
 };
 PizzaBuilder* PizzaBuilder::setIsWithOlives(bool isNeed)
@@ -32,10 +41,6 @@ PizzaBuilder* PizzaBuilder::setIsPepperoni(bool isNeed)
 };
 Pizza PizzaBuilder::Build()
 {
-  return Pizza(this->Dough, this->View, this->IsWithOlives, this->IsWithPinapple, this->IsDoubleCheez,
+  return Pizza(this->Dough, this->Type, this->IsWithOlives, this->IsWithPinapple, this->IsDoubleCheez,
                this->IsPepperoni);
 };
-
-PizzaBuilder::PizzaBuilder()
-{
-}

@@ -1,22 +1,33 @@
 #include <iostream>
 #include <QString>
+//#include "characteristicsofpizza.h"
 #ifndef PIZZA_H
 #define PIZZA_H
-enum class ViewOfDough;
-enum class ViewOfPizza;
+
+enum class ViewOfDough
+{
+  Thin = 0,
+  Traditional = 1
+};
+enum class TypeOfPizza
+{
+  Pepperoni = 0,
+  Margarita = 1,
+  FourCheez = 2,
+  Sea = 3
+};
 class Pizza
 {
   ViewOfDough Dough;
-  ViewOfPizza View;
+  TypeOfPizza Type;
   bool IsWithOlives;
   bool IsWithPinapple;
   bool IsDoubleCheez;
   bool IsPepperoni;
 
 public:
-  Pizza(ViewOfDough dough, ViewOfPizza view, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
+  Pizza(ViewOfDough dough, TypeOfPizza view, bool isWithOlive, bool isWithPinapple, bool isDoubleCheez,
         bool isPepperoni);
   QString GetPizzaInformationText();
-  // friend std::ostream& operator<< (std::ostream &out, const Pizza &pizza);
 };
 #endif  // PIZZA_H
