@@ -14,41 +14,42 @@ namespace PizzaEnumsBox
 {
 enum Dough
 {
-  thin_dough,
-  tradition_dough
+  Thin,
+  Tradition
 };
 
 enum TypeOfPizza
 {
-  pepperoni_pizza,
-  margarita_pizza,
-  fourCheese_pizza,
-  sea_pizza
+  Pepperoni_pizza,
+  Margarita,
+  FourCheese,
+  Sea
 };
 
 enum Olives
 {
-  yes_olives,
-  no_olives
+  Yes_olives,
+  No_olives
 };
 
 enum Pepperoni
 {
-  yes_pepperoni,
-  no_pepperoni
+  Yes_pepperoni,
+  No_pepperoni
 };
 
 enum DoubleCheese
 {
-  yes_doubleCheese,
-  no_doubleCheese
+  Yes_doubleCheese,
+  No_doubleCheese
 };
 
 enum Ananases
 {
-  yes_ananases,
-  no_ananases
+  Yes_ananases,
+  No_ananases
 };
+
 }  // namespace PizzaEnumsBox
 
 QT_END_NAMESPACE

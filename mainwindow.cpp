@@ -31,12 +31,12 @@ public:
 
     switch (dough)
     {
-      case PizzaEnumsBox::thin_dough: {
+      case PizzaEnumsBox::Thin: {
         resultMessage += "С тонким тестом\n";
         break;
       }
 
-      case PizzaEnumsBox::tradition_dough: {
+      case PizzaEnumsBox::Tradition: {
         resultMessage += "С традиционным тестом\n";
         break;
       }
@@ -44,22 +44,22 @@ public:
 
     switch (typeOfPizza)
     {
-      case PizzaEnumsBox::pepperoni_pizza: {
+      case PizzaEnumsBox::Pepperoni_pizza: {
         resultMessage += "Пицца \"Пепперони\"\n";
         break;
       }
 
-      case PizzaEnumsBox::margarita_pizza: {
+      case PizzaEnumsBox::Margarita: {
         resultMessage += "Пицца \"Маргарита\"\n";
         break;
       }
 
-      case PizzaEnumsBox::fourCheese_pizza: {
+      case PizzaEnumsBox::FourCheese: {
         resultMessage += "Пицца \"Четыре сыра\"\n";
         break;
       }
 
-      case PizzaEnumsBox::sea_pizza: {
+      case PizzaEnumsBox::Sea: {
         resultMessage += "Пицца \"Морская\"\n";
         break;
       }
@@ -67,12 +67,12 @@ public:
 
     switch (olives)
     {
-      case PizzaEnumsBox::yes_olives: {
+      case PizzaEnumsBox::Yes_olives: {
         resultMessage += "С оливками\n";
         break;
       }
 
-      case PizzaEnumsBox::no_olives: {
+      case PizzaEnumsBox::No_olives: {
         resultMessage += "Без оливок\n";
         break;
       }
@@ -80,12 +80,12 @@ public:
 
     switch (pepperoni)
     {
-      case PizzaEnumsBox::yes_pepperoni: {
+      case PizzaEnumsBox::Yes_pepperoni: {
         resultMessage += "С пепперони\n";
         break;
       }
 
-      case PizzaEnumsBox::no_pepperoni: {
+      case PizzaEnumsBox::No_pepperoni: {
         resultMessage += "Без пепперони\n";
         break;
       }
@@ -93,12 +93,12 @@ public:
 
     switch (doubleCheese)
     {
-      case PizzaEnumsBox::yes_doubleCheese: {
+      case PizzaEnumsBox::Yes_doubleCheese: {
         resultMessage += "С двойным сыром\n";
         break;
       }
 
-      case PizzaEnumsBox::no_doubleCheese: {
+      case PizzaEnumsBox::No_doubleCheese: {
         resultMessage += "Без двойного сыра\n";
         break;
       }
@@ -106,12 +106,12 @@ public:
 
     switch (ananases)
     {
-      case PizzaEnumsBox::yes_ananases: {
+      case PizzaEnumsBox::Yes_ananases: {
         resultMessage += "С ананасами";
         break;
       }
 
-      case PizzaEnumsBox::no_ananases: {
+      case PizzaEnumsBox::No_ananases: {
         resultMessage += "Без ананасов";
         break;
       }
@@ -123,8 +123,8 @@ public:
 
 class PizzaBuilder
 {
-  PizzaEnumsBox::Dough dough = PizzaEnumsBox::thin_dough;
-  PizzaEnumsBox::TypeOfPizza typeOfPizza = PizzaEnumsBox::pepperoni_pizza;
+  PizzaEnumsBox::Dough dough = PizzaEnumsBox::Thin;
+  PizzaEnumsBox::TypeOfPizza typeOfPizza = PizzaEnumsBox::Pepperoni_pizza;
   PizzaEnumsBox::Olives olives;
   PizzaEnumsBox::Pepperoni pepperoni;
   PizzaEnumsBox::DoubleCheese doubleCheese;
@@ -167,25 +167,25 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
   ui->setupUi(this);
 
-  dough_radio_btn_group.addButton(ui->thin_dough, PizzaEnumsBox::Dough::thin_dough);
-  dough_radio_btn_group.addButton(ui->tradition_dough, PizzaEnumsBox::tradition_dough);
+  dough_radio_btn_group.addButton(ui->thin_dough, PizzaEnumsBox::Dough::Thin);
+  dough_radio_btn_group.addButton(ui->tradition_dough, PizzaEnumsBox::Tradition);
 
-  pizza_type_radio_btn_group.addButton(ui->pepperoni_pizza, PizzaEnumsBox::pepperoni_pizza);
-  pizza_type_radio_btn_group.addButton(ui->margarita_pizza, PizzaEnumsBox::margarita_pizza);
-  pizza_type_radio_btn_group.addButton(ui->fourCheese_pizza, PizzaEnumsBox::fourCheese_pizza);
-  pizza_type_radio_btn_group.addButton(ui->sea_pizza, PizzaEnumsBox::sea_pizza);
+  pizza_type_radio_btn_group.addButton(ui->pepperoni_pizza, PizzaEnumsBox::Pepperoni_pizza);
+  pizza_type_radio_btn_group.addButton(ui->margarita_pizza, PizzaEnumsBox::Margarita);
+  pizza_type_radio_btn_group.addButton(ui->fourCheese_pizza, PizzaEnumsBox::FourCheese);
+  pizza_type_radio_btn_group.addButton(ui->sea_pizza, PizzaEnumsBox::Sea);
 
-  olives_radio_btn_group.addButton(ui->yes_olives, PizzaEnumsBox::yes_olives);
-  olives_radio_btn_group.addButton(ui->no_olives, PizzaEnumsBox::no_olives);
+  olives_radio_btn_group.addButton(ui->yes_olives, PizzaEnumsBox::Yes_olives);
+  olives_radio_btn_group.addButton(ui->no_olives, PizzaEnumsBox::No_olives);
 
-  pepperoni_radio_btn_group.addButton(ui->yes_pepperoni, PizzaEnumsBox::yes_pepperoni);
-  pepperoni_radio_btn_group.addButton(ui->no_pepperoni, PizzaEnumsBox::no_pepperoni);
+  pepperoni_radio_btn_group.addButton(ui->yes_pepperoni, PizzaEnumsBox::Yes_pepperoni);
+  pepperoni_radio_btn_group.addButton(ui->no_pepperoni, PizzaEnumsBox::No_pepperoni);
 
-  double_cheese_radio_btn_group.addButton(ui->yes_doubleCheese, PizzaEnumsBox::yes_doubleCheese);
-  double_cheese_radio_btn_group.addButton(ui->no_doubleCheese, PizzaEnumsBox::no_doubleCheese);
+  double_cheese_radio_btn_group.addButton(ui->yes_doubleCheese, PizzaEnumsBox::Yes_doubleCheese);
+  double_cheese_radio_btn_group.addButton(ui->no_doubleCheese, PizzaEnumsBox::No_doubleCheese);
 
-  ananases_radio_btn_group.addButton(ui->yes_ananases, PizzaEnumsBox::yes_ananases);
-  ananases_radio_btn_group.addButton(ui->no_ananases, PizzaEnumsBox::no_ananases);
+  ananases_radio_btn_group.addButton(ui->yes_ananases, PizzaEnumsBox::Yes_ananases);
+  ananases_radio_btn_group.addButton(ui->no_ananases, PizzaEnumsBox::No_ananases);
 }
 
 MainWindow::~MainWindow()
