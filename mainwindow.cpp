@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <QButtonGroup>
 #include "pizza.h"
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -14,48 +15,40 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_MakePizzaButton_clicked()
 {
+  QButtonGroup* DoughBG = new QButtonGroup;
+  QButtonGroup* PizzaTypeBG = new QButtonGroup;
+  QButtonGroup* OlivesBG = new QButtonGroup;
+  QButtonGroup* PepperoniBG = new QButtonGroup;
+  QButtonGroup* DoubleCheeseBG = new QButtonGroup;
+  QButtonGroup* PineappleBG = new QButtonGroup;
+
+  DoughBG->addButton(ui->ThinCrustRadioButton, 0);
+  DoughBG->addButton(ui->TraditionalCrustRadioButton, 1);
+
+  PizzaTypeBG->addButton(ui->PepperoniRadioButton, 0);
+  PizzaTypeBG->addButton(ui->MargaritaRadioButton, 1);
+  PizzaTypeBG->addButton(ui->FourCheeseRadioButton, 2);
+  PizzaTypeBG->addButton(ui->SeaPizzaRadioButton, 3);
+
+  OlivesBG->addButton(ui->OlivesYesRadioButton, 0);
+  OlivesBG->addButton(ui->OlivesNoRadioButton, 1);
+
+  PepperoniBG->addButton(ui->PepperoniYesRadioButton, 0);
+  PepperoniBG->addButton(ui->PepperoniNoRadioButton, 1);
+
+  DoubleCheeseBG->addButton(ui->DoubleCheeseYesRadioButton, 0);
+  DoubleCheeseBG->addButton(ui->DoubleCheeseNoRadioButton, 1);
+
+  PineappleBG->addButton(ui->PineapplesYesRadioButton, 0);
+  PineappleBG->addButton(ui->PineapplesNoRadioButton, 1);
+
   Pizza::Pizza::MakePizza maker;
-  if (ui->ThinCrustRadioButton->isChecked())
-    maker.SetDoughType(DoughType(0));
-  else if (ui->TraditionalCrustRadioButton->isChecked())
-    maker.SetDoughType(DoughType(1));
-
-  if (ui->PepperoniRadioButton->isChecked())
-    maker.SetPizzaType(PizzaType(0));
-  else if (ui->MargaritaRadioButton->isChecked())
-    maker.SetPizzaType(PizzaType(1));
-  else if (ui->FourCheeseRadioButton->isChecked())
-    maker.SetPizzaType(PizzaType(2));
-  else if (ui->SeaPizzaRadioButton->isChecked())
-    maker.SetPizzaType(PizzaType(3));
-
-  if (ui->OlivesYesRadioButton->isChecked())
-    maker.SetOlives(Olives(0));
-  else if (ui->OlivesNoRadioButton->isChecked())
-    maker.SetOlives(Olives(1));
-  else
-    maker.SetOlives(Olives(1));
-
-  if (ui->PepperoniYesRadioButton->isChecked())
-    maker.SetPepperoni(Pepperoni(0));
-  else if (ui->PepperoniNoRadioButton->isChecked())
-    maker.SetPepperoni(Pepperoni(1));
-  else
-    maker.SetPepperoni(Pepperoni(1));
-
-  if (ui->DoubleCheeseYesRadioButton->isChecked())
-    maker.SetDoubleCheese(DoubleCheese(0));
-  else if (ui->DoubleCheeseNoRadioButton->isChecked())
-    maker.SetDoubleCheese(DoubleCheese(1));
-  else
-    maker.SetDoubleCheese(DoubleCheese(1));
-
-  if (ui->PineapplesYesRadioButton->isChecked())
-    maker.SetPineapples(Pineapples(0));
-  else if (ui->PineapplesNoRadioButton->isChecked())
-    maker.SetPineapples(Pineapples(1));
-  else
-    maker.SetPineapples(Pineapples(1));
+  maker.SetDoughType(DoughType(DoughBG->checkedId()));
+  maker.SetPizzaType(PizzaType(PizzaTypeBG->checkedId()));
+  maker.SetOlives(Olives(OlivesBG->checkedId()));
+  maker.SetPepperoni(Pepperoni(PepperoniBG->checkedId()));
+  maker.SetDoubleCheese(DoubleCheese(DoubleCheeseBG->checkedId()));
+  maker.SetPineapples(Pineapples(PineappleBG->checkedId()));
 
   auto pizza = maker.make();
   ui->textEdit->setText(pizza.GetResult());
