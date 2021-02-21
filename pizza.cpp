@@ -1,7 +1,5 @@
 #include "pizza.h"
 
-//Pizza::Pizza(){};
-
 Pizza::Pizza(Dough dough, Type type, Add olives, Add pepperoni, Add double_cheese, Add pineapple)
 {
   this->dough = dough;

@@ -32,7 +32,6 @@ class Pizza
   Add pineapple;
 
 public:
-  Pizza()=delete;
   explicit Pizza(Dough dough, Type type, Add olives, Add pepperoni, Add double_cheese, Add pineapple);
 };
 
