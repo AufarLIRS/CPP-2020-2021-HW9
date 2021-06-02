@@ -6,6 +6,20 @@
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
+  ui->buttonGroup->setId(ui->radioButton, 0);
+  ui->buttonGroup->setId(ui->radioButton_2, 1);
+  ui->buttonGroup_2->setId(ui->radioButton_3, 0);
+  ui->buttonGroup_2->setId(ui->radioButton_4, 1);
+  ui->buttonGroup_2->setId(ui->radioButton_5, 2);
+  ui->buttonGroup_2->setId(ui->radioButton_6, 3);
+  ui->buttonGroup_3->setId(ui->radioButton_7, 0);
+  ui->buttonGroup_3->setId(ui->radioButton_8, 1);
+  ui->buttonGroup_4->setId(ui->radioButton_9, 0);
+  ui->buttonGroup_4->setId(ui->radioButton_10, 1);
+  ui->buttonGroup_6->setId(ui->radioButton_11, 0);
+  ui->buttonGroup_6->setId(ui->radioButton_12, 1);
+  ui->buttonGroup_5->setId(ui->radioButton_13, 0);
+  ui->buttonGroup_5->setId(ui->radioButton_14, 1);
 }
 
 MainWindow::~MainWindow()
@@ -15,29 +29,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    dough testo = static_cast<dough>(ui->radioButton->isChecked() == 1 ? 0 : 1);
-    int typeOfPizza1 = 0;
-    if (ui->radioButton_3->isChecked()) {
-        typeOfPizza1 = 0;
-    }
-    else if (ui->radioButton_4->isChecked()) {
-        typeOfPizza1 = 1;
-    }
-    else if (ui->radioButton_5->isChecked()) {
-        typeOfPizza1 = 2;
-    }
-    else
-        typeOfPizza1 = 3;
-    typeOfPizza pizzaPrivate = static_cast<typeOfPizza>(typeOfPizza1);
-    addOlivki olivki = static_cast<addOlivki>(ui->radioButton_7->isChecked() == 1 ? 0 : 1);
-    addDoubleChesse chesse = static_cast<addDoubleChesse>(ui->radioButton_9->isChecked() == 1 ? 0 : 1);
-    addPeperonni peperonni = static_cast<addPeperonni>(ui->radioButton_11->isChecked() == 1 ? 0 : 1);
-    addPineapple pineapple = static_cast<addPineapple>(ui->radioButton_13->isChecked() == 1 ? 0 : 1);
+  ui->textEdit->clear();
 
+  auto builder = Pizza::Builder();
+  builder.SetPineapples(Pineapples(ui->buttonGroup_5->checkedId()));
+  builder.SetOlives(Olives(ui->buttonGroup_3->checkedId()));
+  builder.SetTypeOfDough(TypeOfDough(ui->buttonGroup->checkedId()));
+  builder.SetTypeOfPizza(TypeOfPizza(ui->buttonGroup_2->checkedId()));
+  builder.SetPepperoni(Pepperoni(ui->buttonGroup_4->checkedId()));
+  builder.SetDoubleCheese(DoubleCheese(ui->buttonGroup_6->checkedId()));
 
-    pizza* newPizza = new pizza(testo, pizzaPrivate, olivki, peperonni, chesse, pineapple);
-    qDebug() << "dough: " << newPizza->getTesto() << "typeOfPizza: " << newPizza->getPizzaPrivate() <<
-                "olivki: " << newPizza->getOlivki() << "chesse: " << newPizza->getChesse() << "peperonni: " << newPizza->getPeperonniPrivate()
-             << "pineapple: " <<newPizza->getPineapple();
+  auto pizza = builder.build();
+  ui->textEdit->setText(pizza.GetResult());
 }
 

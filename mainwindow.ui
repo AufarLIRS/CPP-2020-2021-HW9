@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,19 +41,25 @@
         <property name="text">
          <string>Тонкое</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_2">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>50</y>
-          <width>121</width>
+          <width>131</width>
           <height>20</height>
          </rect>
         </property>
         <property name="text">
          <string>Традиционное</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
        </widget>
       </widget>
      </item>
@@ -67,26 +73,32 @@
          <rect>
           <x>10</x>
           <y>20</y>
-          <width>95</width>
+          <width>101</width>
           <height>20</height>
          </rect>
         </property>
         <property name="text">
          <string>Маргарита</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_4">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>50</y>
-          <width>95</width>
+          <width>111</width>
           <height>20</height>
          </rect>
         </property>
         <property name="text">
          <string>Пеперонни</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_5">
         <property name="geometry">
@@ -100,6 +112,9 @@
         <property name="text">
          <string>Морская</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_6">
         <property name="geometry">
@@ -113,6 +128,9 @@
         <property name="text">
          <string>4 сыра</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
        </widget>
       </widget>
      </item>
@@ -133,6 +151,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_8">
         <property name="geometry">
@@ -146,6 +167,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
        </widget>
       </widget>
      </item>
@@ -166,6 +190,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_4</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_10">
         <property name="geometry">
@@ -179,6 +206,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_4</string>
+        </attribute>
        </widget>
       </widget>
      </item>
@@ -199,6 +229,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_6</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_12">
         <property name="geometry">
@@ -212,6 +245,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_6</string>
+        </attribute>
        </widget>
       </widget>
      </item>
@@ -232,6 +268,9 @@
         <property name="text">
          <string>Да</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_5</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_14">
         <property name="geometry">
@@ -245,6 +284,9 @@
         <property name="text">
          <string>Нет</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_5</string>
+        </attribute>
        </widget>
       </widget>
      </item>
@@ -263,6 +305,16 @@
      <string>Make Pizza!</string>
     </property>
    </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>540</y>
+      <width>421</width>
+      <height>121</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -270,7 +322,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -278,4 +330,12 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_4"/>
+  <buttongroup name="buttonGroup_5"/>
+  <buttongroup name="buttonGroup_6"/>
+ </buttongroups>
 </ui>
