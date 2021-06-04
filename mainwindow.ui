@@ -6,17 +6,247 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>415</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="choice_dough_groupBox">
+      <property name="title">
+       <string>  Choice Dough</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QRadioButton" name="thin_dough_radioButton">
+         <property name="text">
+          <string>Thin Dough</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">doughButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="traditional_dough_radioButton">
+         <property name="text">
+          <string>Traditional Dough</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">doughButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="3">
+     <widget class="QGroupBox" name="pizza_type_groupBox">
+      <property name="title">
+       <string>Pizza Type</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QRadioButton" name="Pepperoni_radioButton">
+         <property name="text">
+          <string>Pepperoni</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pizzaTypeButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="marguerite_radioButton">
+         <property name="text">
+          <string>Marguerite</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pizzaTypeButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="four_cheeses_radioButton">
+         <property name="text">
+          <string>Four cheeses</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pizzaTypeButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="Sea_radioButton">
+         <property name="text">
+          <string>Sea</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pizzaTypeButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="olive_groupBox">
+      <property name="title">
+       <string>Olive</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QRadioButton" name="olive_yes_radioButton">
+         <property name="text">
+          <string>Yes</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">oliveButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="olive_no_radioButton">
+         <property name="text">
+          <string>No</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">oliveButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" rowspan="2">
+     <widget class="QGroupBox" name="pepperoni_groupBox">
+      <property name="title">
+       <string>Pepperoni</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QRadioButton" name="pepperoni_yes_radioButton">
+         <property name="text">
+          <string>Yes</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pepperoniButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="pepperoni_no_radioButton">
+         <property name="text">
+          <string>No</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pepperoniButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="1" rowspan="3">
+     <widget class="QTextEdit" name="output_textEdit"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QGroupBox" name="double_cheese_groupBox">
+      <property name="title">
+       <string>Double cheese</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QRadioButton" name="double_cheese_yes_radioButton">
+         <property name="text">
+          <string>Yes</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">doubleCheeseButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="double_cheese_no_radioButton">
+         <property name="text">
+          <string>No</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">doubleCheeseButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="5" column="0" rowspan="2">
+     <widget class="QGroupBox" name="Pineapple_groupBox">
+      <property name="title">
+       <string>Pineapple</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QRadioButton" name="pineapple_yes_radioButton">
+         <property name="text">
+          <string>Yes</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pineappleButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="pineapple_no_radioButton">
+         <property name="text">
+          <string>No</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">pineappleButtonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="make_pushButton">
+      <property name="text">
+       <string>make</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>415</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPizzaMaker">
+    <property name="title">
+     <string>PizzaMaker</string>
+    </property>
+   </widget>
+   <addaction name="menuPizzaMaker"/>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="doughButtonGroup"/>
+  <buttongroup name="oliveButtonGroup"/>
+  <buttongroup name="pepperoniButtonGroup"/>
+  <buttongroup name="doubleCheeseButtonGroup"/>
+  <buttongroup name="pineappleButtonGroup"/>
+  <buttongroup name="pizzaTypeButtonGroup"/>
+ </buttongroups>
 </ui>
